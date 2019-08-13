@@ -1,1 +1,1 @@
-Please refer the vforum(2) for the review.
+Please refer the vforum.war for the review.

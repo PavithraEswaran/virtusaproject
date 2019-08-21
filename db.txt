@@ -1,0 +1,32 @@
+create database vforum;
+
+ create table employee
+     (emp_id int not null primary key,
+     emp_name varchar(30) not null,
+     emp_Designation varchar(30) not null,
+     emp_Location varchar(20) not null,
+     user_name varchar(20) not null,
+     password varchar(20) not null);
+
+create table category
+    (catId int not null primary key,
+    cate_name varchar(20) not null);
+
+insert into category values(11,"IT");
+insert into category values(22,"HR");
+insert into category values(33,"TECHNICAL");
+insert into category values(44,"GENERAL");
+
+
+ create table questions
+    (ques_id int not null auto_increment primary key,
+    cat_id int not null references category(catId),
+    question_desc varchar(500) not null,
+    emp_id int not null references employee(emp_id),
+    date date not null);
+
+create table answers
+    (ans_id int not null,
+     answer_desc varchar(2000) not null,
+    date date not null,
+    emp_id int not null references employee(emp_id));
